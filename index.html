@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Han's Resume</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Anton|Slabo+27px|Open+Sans|Ubuntu|Lobster|Comfortaa" rel="stylesheet">
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+  </head>
+  <body>
+  	<Header>
+      <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+          <p class="navbar-text nav-name">Myunghan Jung</p>
+          <p class="navbar-text navbar-right nav-name">mhanjung@gmail.com</p>
+        </div>
+      </nav>
+      <div class="parallax" style="background-image: url('IMG_7441.JPG');"></div>
+      <div class="sr-only">Me copying comic characters walking.</div>
+  		<div class="container header-content">
+  			<div class="header-content-image">
+          <img src="image/test.png" class="img-thumbnail" alt="A photo of me in front of sky scrapers in Chicago." height="144" width="144"/>
+        </div>
+  			<div class="header-content-text">
+          <h2 id="name">Han (Myunghan) Jung</h2>
+          <p>Richfield, MN | (612) 500-8782 | mhanjung@gmail.com</p>
+          <a href="https://github.com/mhanjung">https://github.com/mhanjung</a>
+        </div>
+  		</div>
+	  </Header>
+    <section>
+      <div class="container container-title">
+        <h3 class="section-title pull-left">Technical Skills</h3>
+        <button id="button1" class="btn btn-default pull-right" style="margin-top:15px;"><b>-</b></button>
+      </div>
+      <div class="container-fluid">
+        <h6 class="section-title-line"></h6>
+      </div>
+      <div id="contentSkills">
+        <div class="container section-content">
+          <p><b>Programming: </b>Java, Spring, SQL, JavaScript, jQuery, HTML, JSON, AJAX</p>
+          <p><b>Software: </b>Eclipse, IntelliJ, Spring Tool Suite, SVN, GIT</p>
+          <p><b>Database/DBMS: </b>Oracle DB, MySQL, IBM DB2</p>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="container container-title">
+        <h3 class="section-title pull-left">Work Experience</h3>
+        <button id="button2" class="btn btn-default pull-right" style="margin-top:15px;"><b>-</b></button>
+      </div>
+      <div class="container-fluid">
+        <h6 class="section-title-line"></h6>
+      </div>
+      <div id="contentExperience">
+        <div class="container section-content">
+          <p class="pull-left"><b>Lead Developer</b></p>
+          <p class="pull-right">January 2015 - August 2016</p>
+        </div>
+        <div class="container section-content">
+          <p><b>Foxsoft, Seoul, South Korea</b></p>
+          <ul>
+            <li>Coded back-end business logic in Java and front-end in JavaScript</li>
+            <li>Wrote SQL statements</li>
+            <li>Met with clients and project leaders to gather requirements and discuss development scope and timelines</li>
+            <li>Conducted remote sessions with users</li>
+            <li>Integrated modules from partner companies, such as encryption and reporting modules</li>
+            <li>Reviewed wireframes with clients and revised as needed</li>
+            <li>Tested and debugged code</li>
+            <li>Mentored junior development team members</li>
+            <li>Performed code reviews</li>
+            <li>Promoted to Lead Developer from Developer after one year</li>
+          </ul> 
+        </div>
+
+        <div class="container section-content">
+          <p class="pull-left"><b>Developer</b></p>
+          <p class="pull-right">September 2012 - December 2013</p>
+        </div>
+        <div class="container section-content">
+          <p><b>C&IS(Consulting & Innovation Services), Seoul, South Korea</b></p>
+          <ul>
+            <li>Wrote business logic and events in Java and JavaScript</li>
+            <li>Developed code in Spring Framework(SpringMVC)</li>
+            <li>Coded and maintained 25% of pages out of total pages</li>
+            <li>Wrote static queries such as CRUD</li>
+            <li>Received requests from clients and revised code</li>
+          </ul> 
+        </div>
+      </div>
+    </section>
+    <section style="height:200px">
+      <div class="container container-title">
+        <h3 class="section-title pull-left">Education</h3>
+        <button id="button3" class="btn btn-default pull-right" style="margin-top:15px;"><b>-</b></button>
+      </div>
+      <div class="container-fluid">
+        <h6 class="section-title-line"></h6>
+      </div>
+      <div id="contentEducation">
+        <div class="container section-content">
+          <p><b>Bachelor of Science in Biochemistry,</b> Kookmin University, Seoul, South Korea</p>
+          <p><b>Java and Web Development Expert Certificate,</b> Samsung SDS, Seoul, South Korea</p>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="footer-bottom">
+        <h2 class="footer-bottom-text">Thanks for stopping by!</h2>
+      </div>
+    </footer>
+    <script> 
+      $(document).ready(function(){
+          $("#button1").click(function(){
+              changeBtnText($(this));
+              $("#contentSkills").animate({
+                  height: 'toggle'
+              });
+          });
+          $("#button2").click(function(){
+              changeBtnText($(this));
+              $("#contentExperience").animate({
+                  height: 'toggle'
+              });
+          });
+          $("#button3").click(function(){
+              changeBtnText($(this));
+              $("#contentEducation").animate({
+                  height: 'toggle'
+              });
+          });
+      });
+
+      function changeBtnText(param) {
+        var test = param.children().html();
+        if(test == '+'){
+          param.children().html('-');
+        }else{
+          param.children().html('+');
+        }
+      }
+    </script> 
+  </body>
+</html>
